@@ -1,0 +1,64 @@
+.our-clients {
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee {
+  display: flex;
+  overflow: hidden;
+  margin: 20px 0;
+  position: relative;
+}
+
+.marquee-content {
+  display: flex;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.marquee-right .marquee-content {
+  animation-name: scrollRight;
+}
+
+.marquee-left .marquee-content {
+  animation-name: scrollLeft;
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.marquee:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+  .marquee-content {
+    animation-duration: 20s;
+  }
+  
+  .marquee-content img {
+    width: 80px !important;
+    height: 40px !important;
+  }
+}

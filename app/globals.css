@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #010101;
+  --font-heading: var(--font-bebas);
+  --font-body: var(--font-inter);
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  letter-spacing: 2px;
+}
+
+p,
+span,
+a,
+li {
+  font-family: var(--font-body);
+}
+
+
+@theme {
+
+  --color-primary: #6B55FF;
+  --color-text-primary: #FEE9CE;
+  --color-header-background: #010101;
+}
+
+body {
+  /* color: var(--foreground); */
+  background-color: var(--foreground);
+}
+
+
