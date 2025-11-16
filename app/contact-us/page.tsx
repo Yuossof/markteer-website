@@ -24,236 +24,271 @@ const ContactPage = () => {
     console.log(formData);
   };
 
+  const contactCards = [
+    {
+      icon: Phone,
+      title: "Phone",
+      content: "+2011 49811263",
+      gradient: "from-purple-500 via-pink-500 to-red-500"
+    },
+    {
+      icon: Mail,
+      title: "Email",
+      content: "Info@marketeereg.com",
+      gradient: "from-blue-500 via-purple-500 to-pink-500"
+    },
+    {
+      icon: MapPin,
+      title: "Location",
+      content: "Gamal Abdel Nasser, Industrial Area, Third New Cairo, Cairo Governorate, Egypt",
+      gradient: "from-green-500 via-blue-500 to-purple-500"
+    },
+    {
+      icon: Clock,
+      title: "Customer Support",
+      content: "+2011 49811263",
+      gradient: "from-cyan-500 via-blue-500 to-purple-500"
+    }
+  ];
+
   return (
-    <div className="min-h-screen bg-slate-950 py-12 px-4 sm:px-6 lg:px-8">
-      {/* Background Pattern */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-purple-900/20 transform rotate-45"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-900/20 transform rotate-45"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-900/10 rotate-45"></div>
+    <div className="min-h-screen bg-slate-950 relative overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
+      {/* Color Gradient Splash - Top Left to Center */}
+      <div className="absolute inset-0">
+        <div 
+          className="absolute top-0 left-0 w-full h-full opacity-25"
+          style={{
+            background: `
+              radial-gradient(ellipse 800px 600px at top left, 
+                #ff0000 0%, 
+                #ff8000 15%, 
+                #ffff00 25%, 
+                #80ff00 35%, 
+                #00ff00 45%, 
+                #00ff80 55%, 
+                #00ffff 65%, 
+                #0080ff 75%, 
+                #0000ff 85%, 
+                #8000ff 95%, 
+                transparent 100%
+              )
+            `
+          }}
+        ></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Contact Us
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">
+            CONTACT US
           </h1>
-          <p className="text-gray-500 text-lg">
-            We&apos;re here to help. Reach out to us anytime
+          <div className="w-24 h-1 bg-linear-to-r from-purple-500 via-pink-500 to-cyan-500 mx-auto mb-6"></div>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            We&apos;re here to help. Reach out to us anytime and let&apos;s start your digital transformation journey
           </p>
         </div>
 
         {/* Contact Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {/* Phone Card */}
-          <div className="relative bg-gray-950 border border-gray-800 rounded-lg p-6 overflow-hidden hover:border-purple-800 transition-all duration-300 group">
-            {/* Sharp shapes */}
-            <div className="absolute -top-3 -right-3 w-0 h-0 
-              border-l-40 border-l-transparent
-              border-t-40 border-t-purple-800/50
-              group-hover:border-t-purple-600/50 transition-colors"></div>
-            <div className="absolute -bottom-3 -left-3 w-0 h-0 
-              border-r-40 border-r-transparent
-              border-b-40 border-b-purple-800/30
-              group-hover:border-b-purple-600/30 transition-colors"></div>
-            
-            <div className="relative">
-              <div className="bg-purple-900/20 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <Phone className="w-6 h-6 text-purple-400" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {contactCards.map((card, index) => {
+            const IconComponent = card.icon;
+            return (
+              <div 
+                key={index}
+                className="group relative p-6 bg-gray-900 transition-all duration-300 hover:-translate-y-1"
+                style={{
+                  clipPath: 'polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px))'
+                }}
+              >
+                {/* Thin Colorful Border */}
+                <div 
+                  className={`absolute inset-0 bg-linear-to-r ${card.gradient} p-[1px] group-hover:p-[2px] transition-all duration-300`}
+                  style={{
+                    clipPath: 'polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px))'
+                  }}
+                >
+                  <div 
+                    className="h-full w-full bg-gray-950"
+                    style={{
+                      clipPath: 'polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px))'
+                    }}
+                  ></div>
+                </div>
+                
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center mb-4 group-hover:bg-slate-800 transition-colors duration-300">
+                    <IconComponent className="w-6 h-6 text-gray-400" />
+                  </div>
+                  <h3 className="text-white font-semibold mb-2">
+                    {card.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm">
+                    {card.content}
+                  </p>
+                </div>
               </div>
-              <h3 className="text-white font-semibold mb-2">Phone</h3>
-              <p className="text-gray-500 text-sm">+2011 49811263</p>
-            </div>
-          </div>
-
-          {/* Email Card */}
-          <div className="relative bg-gray-950 border border-gray-800 rounded-lg p-6 overflow-hidden hover:border-blue-800 transition-all duration-300 group">
-            {/* Sharp shapes */}
-            <div className="absolute -top-3 -right-3 w-0 h-0 
-              border-l-40 border-l-transparent
-              border-t-40 border-t-blue-800/50
-              group-hover:border-t-blue-600/50 transition-colors"></div>
-            <div className="absolute -bottom-3 -left-3 w-0 h-0 
-              border-r-40 border-r-transparent
-              border-b-40 border-b-blue-800/30
-              group-hover:border-b-blue-600/30 transition-colors"></div>
-            
-            <div className="relative">
-              <div className="bg-blue-900/20 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <Mail className="w-6 h-6 text-blue-400" />
-              </div>
-              <h3 className="text-white font-semibold mb-2">Email</h3>
-              <p className="text-gray-500 text-sm break-all">Info@marketeereg.com</p>
-            </div>
-          </div>
-
-          {/* Location Card */}
-          <div className="relative bg-gray-950 border border-gray-800 rounded-lg p-6 overflow-hidden hover:border-pink-800 transition-all duration-300 group">
-            {/* Sharp shapes */}
-            <div className="absolute -top-3 -right-3 w-0 h-0 
-              border-l-40 border-l-transparent
-              border-t-40 border-t-pink-800/50
-              group-hover:border-t-pink-600/50 transition-colors"></div>
-            <div className="absolute -bottom-3 -left-3 w-0 h-0 
-              border-r-40 border-r-transparent
-              border-b-40 border-b-pink-800/30
-              group-hover:border-b-pink-600/30 transition-colors"></div>
-            
-            <div className="relative">
-              <div className="bg-pink-900/20 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <MapPin className="w-6 h-6 text-pink-400" />
-              </div>
-              <h3 className="text-white font-semibold mb-2">Location</h3>
-              <p className="text-gray-500 text-sm">Gamal Abdel Nasser, Industrial Area, Third New Cairo, Cairo Governorate, Cairo, Egypt</p>
-            </div>
-          </div>
-
-          {/* Support Card */}
-          <div className="relative bg-gray-950 border border-gray-800 rounded-lg p-6 overflow-hidden hover:border-green-800 transition-all duration-300 group">
-            {/* Sharp shapes */}
-            <div className="absolute -top-3 -right-3 w-0 h-0 
-              border-l-40 border-l-transparent
-              border-t-40 border-t-green-800/50
-              group-hover:border-t-green-600/50 transition-colors"></div>
-            <div className="absolute -bottom-3 -left-3 w-0 h-0 
-              border-r-40 border-r-transparent
-              border-b-40 border-b-green-800/30
-              group-hover:border-b-green-600/30 transition-colors"></div>
-            
-            <div className="relative">
-              <div className="bg-green-900/20 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <Clock className="w-6 h-6 text-green-400" />
-              </div>
-              <h3 className="text-white font-semibold mb-2">Customer Support</h3>
-              <p className="text-gray-500 text-sm">+2011 49811263</p>
-            </div>
-          </div>
+            );
+          })}
         </div>
 
         {/* Contact Form */}
-        <div className="relative bg-gray-950 border border-gray-800 rounded-xl p-8 md:p-12 overflow-hidden">
-          {/* Sharp decorative shapes */}
-          <div className="absolute -top-6 -right-6 w-0 h-0 
-            border-l-80 border-l-transparent
-            border-t-80 border-t-purple-900/20"></div>
-          <div className="absolute -bottom-6 -left-6 w-0 h-0 
-            border-r-80 border-r-transparent
-            border-b-80 border-b-blue-900/20"></div>
-          
-          <div className="relative">
-            <h2 className="text-3xl font-bold text-white mb-6 text-center">Get In Touch</h2>
+        <div className="relative mb-12">
+          <div 
+            className="relative p-8 md:p-12 bg-gray-950"
+            style={{
+              clipPath: 'polygon(0 0, calc(100% - 25px) 0, 100% 25px, 100% 100%, 25px 100%, 0 calc(100% - 25px))'
+            }}
+          >
+            {/* Thin Colorful Border */}
+            <div 
+              className="absolute inset-0 bg-linear-to-r from-purple-500 via-pink-500 to-cyan-500 p-[1px]"
+              style={{
+                clipPath: 'polygon(0 0, calc(100% - 25px) 0, 100% 25px, 100% 100%, 25px 100%, 0 calc(100% - 25px))'
+              }}
+            >
+              <div 
+                className="h-full w-full bg-gray-950"
+                style={{
+                  clipPath: 'polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))'
+                }}
+              ></div>
+            </div>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="relative z-10">
+              <h2 className="text-3xl font-bold text-white mb-8 text-center">Get In Touch</h2>
+              
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-gray-400 text-sm font-medium mb-2">
+                      Full Name
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-purple-500 transition-colors duration-300"
+                      placeholder="Enter your full name"
+                      required
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-gray-400 text-sm font-medium mb-2">
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-purple-500 transition-colors duration-300"
+                      placeholder="example@email.com"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-gray-400 text-sm font-medium mb-2">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-purple-500 transition-colors duration-300"
+                      placeholder="+20 123 456 7890"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-gray-400 text-sm font-medium mb-2">
+                      Subject
+                    </label>
+                    <input
+                      type="text"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-purple-500 transition-colors duration-300"
+                      placeholder="Message subject"
+                      required
+                    />
+                  </div>
+                </div>
+
                 <div>
                   <label className="block text-gray-400 text-sm font-medium mb-2">
-                    Full Name
+                    Your Message
                   </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
+                  <textarea
+                    name="message"
+                    value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-purple-600 transition-colors"
-                    placeholder="Enter your full name"
+                    rows={5}
+                    className="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-purple-500 transition-colors duration-300 resize-none"
+                    placeholder="Write your message here..."
                     required
                   />
                 </div>
-                
-                <div>
-                  <label className="block text-gray-400 text-sm font-medium mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-purple-600 transition-colors"
-                    placeholder="example@email.com"
-                    required
-                  />
-                </div>
-              </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-gray-400 text-sm font-medium mb-2">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-purple-600 transition-colors"
-                    placeholder="+20 123 456 7890"
-                  />
+                <div className="text-center">
+                  <button
+                    type="submit"
+                    className="inline-flex items-center px-10 py-4 bg-slate-900 border border-slate-800 text-white font-semibold hover:bg-slate-800 transition-all duration-300 shadow-lg"
+                    style={{
+                      clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))'
+                    }}
+                  >
+                    <Send className="w-5 h-5 mr-2" />
+                    Send Message
+                  </button>
                 </div>
-                
-                <div>
-                  <label className="block text-gray-400 text-sm font-medium mb-2">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-purple-600 transition-colors"
-                    placeholder="Message subject"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-gray-400 text-sm font-medium mb-2">
-                  Your Message
-                </label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={5}
-                  className="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-purple-600 transition-colors resize-none"
-                  placeholder="Write your message here..."
-                  required
-                />
-              </div>
-
-              <div className="text-center">
-                <button
-                  type="submit"
-                  className="inline-flex items-center px-8 py-3 bg-linear-to-r from-purple-700 to-blue-700 text-white font-semibold rounded-lg hover:from-purple-800 hover:to-blue-800 transform cursor-pointer transition-all duration-300 shadow-lg"
-                >
-                  <Send className="w-5 h-5 mr-2" />
-                  Send Message
-                </button>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
 
-        {/* Map Section (Optional) */}
-        <div className="mt-12 relative bg-gray-950 border border-gray-800 rounded-xl p-2 overflow-hidden">
-          <div className="absolute -top-4 -right-4 w-0 h-0 
-            border-l-60 border-l-transparent
-            border-t-60 border-t-purple-900/20"></div>
-          <div className="absolute -bottom-4 -left-4 w-0 h-0 
-            border-r-60 border-r-transparent
-            border-b-60 border-b-blue-900/20"></div>
-          
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.8976737702924!2d31.497!3d30.0667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDA0JzAwLjEiTiAzMcKwMjknNDkuMiJF!5e0!3m2!1sen!2seg!4v1234567890"
-            width="100%"
-            height="400"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            className="rounded-lg"
-          ></iframe>
+        {/* Map Section */}
+        <div className="relative">
+          <div 
+            className="relative p-2 bg-gray-950"
+            style={{
+              clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px))'
+            }}
+          >
+            {/* Thin Map Border */}
+            <div 
+              className="absolute inset-0 bg-linear-to-r from-green-500 via-blue-500 to-purple-500 p-[1px]"
+              style={{
+                clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px))'
+              }}
+            >
+              <div 
+                className="h-full w-full bg-gray-950"
+                style={{
+                  clipPath: 'polygon(0 0, calc(100% - 19px) 0, 100% 19px, 100% 100%, 19px 100%, 0 calc(100% - 19px))'
+                }}
+              ></div>
+            </div>
+            
+            <div className="relative z-10">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.8976737702924!2d31.497!3d30.0667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDA0JzAwLjEiTiAzMcKwMjknNDkuMiJF!5e0!3m2!1sen!2seg!4v1234567890"
+                width="100%"
+                height="400"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                className="rounded-lg"
+              ></iframe>
+            </div>
+          </div>
         </div>
       </div>
     </div>
