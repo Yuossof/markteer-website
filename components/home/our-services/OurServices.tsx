@@ -13,7 +13,7 @@ import {
 } from 'react-icons/fa'
 
 const OurServices = () => {
-    const [activeIndex, setActiveIndex] = useState(1); 
+    const [activeIndex, setActiveIndex] = useState(1);
 
     const services = [
         {
@@ -85,7 +85,7 @@ const OurServices = () => {
         const interval = setInterval(() => {
             setActiveIndex(prev => {
                 if (prev >= services.length - 1) {
-                    return 1; 
+                    return 1;
                 }
                 return prev + 1;
             });
@@ -103,6 +103,21 @@ const OurServices = () => {
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-linear-to-r from-green-500/5 to-yellow-500/5 rounded-full blur-3xl animate-pulse delay-500"></div>
             </div>
 
+            {/* Subtle Bottom Orange Gradient */}
+            <div className="absolute inset-0">
+                <div
+                    className="absolute inset-0 opacity-15"
+                    style={{
+                        background: `linear-gradient(to top, 
+                #ff4500 0%, 
+                #ff6347 8%, 
+                #ff8c00 15%, 
+                transparent 28%
+            )`
+                    }}
+                ></div>
+            </div>
+            
             {/* Grid Pattern */}
             <div className="absolute inset-0 opacity-[0.02]">
                 <div className="h-full w-full" style={{
@@ -181,28 +196,26 @@ const OurServices = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {services.slice(1).map((service, index) => {
                             const IconComponent = service.icon;
-                            const actualIndex = index + 1; // الفهرس الحقيقي للخدمة
+                            const actualIndex = index + 1;
                             const isActive = actualIndex === activeIndex;
-                            
+
                             return (
                                 <div
                                     key={index}
-                                    className={`group relative bg-slate-900/30 backdrop-blur-sm border transition-all duration-400 p-8 ${
-                                        isActive 
-                                            ? 'bg-slate-800/40 border-slate-700/60 -translate-y-1' 
+                                    className={`group relative bg-slate-900/30 backdrop-blur-sm border transition-all duration-400 p-8 ${isActive
+                                            ? 'bg-slate-800/40 border-slate-700/60 -translate-y-1'
                                             : 'border-slate-800/50 hover:bg-slate-800/40 hover:border-slate-700/60 hover:-translate-y-1'
-                                    }`}
+                                        }`}
                                     style={{
                                         clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px))'
                                     }}
                                 >
                                     {/* Colorful Border */}
                                     <div
-                                        className={`absolute inset-0 bg-linear-to-r ${service.gradient} transition-all duration-500 ${
-                                            isActive 
-                                                ? 'p-1 opacity-100' 
+                                        className={`absolute inset-0 bg-linear-to-r ${service.gradient} transition-all duration-500 ${isActive
+                                                ? 'p-1 opacity-100'
                                                 : 'p-0.5 opacity-0 group-hover:opacity-100 group-hover:p-1'
-                                        }`}
+                                            }`}
                                         style={{
                                             clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px))'
                                         }}
@@ -216,21 +229,19 @@ const OurServices = () => {
                                     </div>
 
                                     {/* Number Background */}
-                                    <div className={`absolute top-4 right-4 text-5xl font-black transition-colors duration-300 ${
-                                        isActive 
-                                            ? 'text-slate-800/30' 
+                                    <div className={`absolute top-4 right-4 text-5xl font-black transition-colors duration-300 ${isActive
+                                            ? 'text-slate-800/30'
                                             : 'text-slate-900/20 group-hover:text-slate-800/30'
-                                    }`}>
+                                        }`}>
                                         {service.number}
                                     </div>
 
                                     {/* Icon */}
                                     <div
-                                        className={`relative z-10 inline-flex items-center justify-center w-14 h-14 bg-linear-to-r ${service.gradient} mb-6 transition-transform duration-300 shadow-lg ${
-                                            isActive 
-                                                ? 'scale-110' 
+                                        className={`relative z-10 inline-flex items-center justify-center w-14 h-14 bg-linear-to-r ${service.gradient} mb-6 transition-transform duration-300 shadow-lg ${isActive
+                                                ? 'scale-110'
                                                 : 'group-hover:scale-110'
-                                        }`}
+                                            }`}
                                         style={{
                                             clipPath: 'polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px))'
                                         }}
@@ -240,58 +251,30 @@ const OurServices = () => {
 
                                     {/* Content */}
                                     <div className="relative z-10">
-                                        <h3 className={`text-lg font-bold mb-3 transition-colors duration-300 ${
-                                            isActive 
-                                                ? 'text-gray-100' 
+                                        <h3 className={`text-lg font-bold mb-3 transition-colors duration-300 ${isActive
+                                                ? 'text-gray-100'
                                                 : 'text-white group-hover:text-gray-100'
-                                        }`}>
+                                            }`}>
                                             {service.title}
                                         </h3>
 
-                                        <p className={`text-sm leading-relaxed transition-colors duration-300 ${
-                                            isActive 
-                                                ? 'text-gray-300' 
+                                        <p className={`text-sm leading-relaxed transition-colors duration-300 ${isActive
+                                                ? 'text-gray-300'
                                                 : 'text-gray-400 group-hover:text-gray-300'
-                                        }`}>
+                                            }`}>
                                             {service.description}
                                         </p>
                                     </div>
 
                                     {/* Gradient Bottom Line */}
-                                    <div className={`absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r ${service.gradient} transition-all duration-500 ${
-                                        isActive 
-                                            ? 'opacity-100' 
+                                    <div className={`absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r ${service.gradient} transition-all duration-500 ${isActive
+                                            ? 'opacity-100'
                                             : 'opacity-0 group-hover:opacity-100'
-                                    }`}></div>
+                                        }`}></div>
                                 </div>
                             )
                         })}
                     </div>
-
-                    {/* Bottom CTA Section */}
-                    {/* <div className="mt-20 text-center">
-                        <div
-                            className="inline-block bg-slate-800/50 backdrop-blur-sm border border-slate-700/30 p-8 hover:border-slate-600/50 transition-all duration-300"
-                            style={{
-                                clipPath: 'polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px))'
-                            }}
-                        >
-                            <p className="text-lg text-gray-300 mb-6">
-                                Ready to transform your business?
-                            </p>
-                            <button
-                                className="inline-flex items-center px-10 py-4 bg-linear-to-r from-purple-600 via-pink-600 to-cyan-600 text-white font-semibold hover:from-purple-500 hover:via-pink-500 hover:to-cyan-500 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl"
-                                style={{
-                                    clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))'
-                                }}
-                            >
-                                Start Your Project
-                                <svg className="ml-3 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div> */}
                 </div>
             </div>
         </section>
