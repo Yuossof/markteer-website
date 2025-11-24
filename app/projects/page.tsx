@@ -5,7 +5,7 @@ import { ExternalLink, Github, Eye, ArrowUpRight } from 'lucide-react';
 
 const ProjectsPage = () => {
     const [filter, setFilter] = useState('all');
-    const [hoveredId, setHoveredId] = useState(null);
+    const [hoveredId, setHoveredId] = useState<number | null>(null);
 
     const projects = [
         {
