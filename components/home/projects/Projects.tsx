@@ -116,12 +116,17 @@ const HomeProjects = () => {
                 </div>
 
                 <div className="text-center">
-                    <button
+                    <Link
+                    href={"/projects"}
+                        style={{
+                            clipPath: 'polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px))'
+
+                        }}
                         className="inline-flex cursor-pointer items-center px-10 py-4 bg-linear-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-lg hover:shadow-purple-500/50 group rounded-sm"
                     >
-                        View All Services
+                        View All Projects
                         <ExternalLink className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                    </button>
+                    </Link>
                 </div>
             </div>
         </section>
@@ -134,7 +139,7 @@ type Itm = {
     description: string,
     image: string
 }
-const ServiceCard = ({ item, large = false, wide = false }: {item: Itm, large?: boolean, wide?: boolean}) => {
+const ServiceCard = ({ item, large = false, wide = false }: { item: Itm, large?: boolean, wide?: boolean }) => {
     const heightClass = large ? 'h-[500px]' : wide ? 'h-[300px]' : 'h-[240px]';
 
     const [pos, setPos] = useState({ x: 0, y: 0 });

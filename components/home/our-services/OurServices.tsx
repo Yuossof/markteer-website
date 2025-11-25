@@ -81,12 +81,13 @@ const OurServices = () => {
     }, [services.length]);
 
     return (
-        <section className="min-h-screen py-20 bg-gradient-to-br from-gray-950 via-slate-950 to-black relative overflow-hidden">
+        <section className="min-h-screen py-20 bg-linear-to-br from-gray-950 via-slate-950 to-black relative overflow-hidden">
             {/* Animated Background Elements */}
             <div className="absolute inset-0">
-                <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-green-500/5 to-yellow-500/5 rounded-full blur-3xl animate-pulse delay-500"></div>
+                <div className="absolute top-20 left-10 w-72 h-72 bg-linear-to-r from-pu
+                rple-500/10 to-pink-500/10 rounded-full blur-3xl animate-pulse"></div>
+                <div className="absolute bottom-20 right-10 w-96 h-96 bg-linear-to-r from-blue-500/10 to-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-linear-to-r from-green-500/5 to-yellow-500/5 rounded-full blur-3xl animate-pulse delay-500"></div>
             </div>
 
             {/* Subtle Bottom Orange Gradient */}
@@ -116,10 +117,10 @@ const OurServices = () => {
                 {/* Header */}
                 <div className="text-center mb-20">
                     <div className="inline-block">
-                        <h2 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 mb-6 tracking-tight">
+                        <h2 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-linear-to-r from-cyan-400 via-purple-400 to-pink-400 mb-6 tracking-tight">
                             OUR SERVICES
                         </h2>
-                        <div className="h-1 w-full bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500"></div>
+                        <div className="h-1 w-full bg-linear-to-r from-purple-500 via-pink-500 to-cyan-500"></div>
                     </div>
                     <p className="text-lg text-gray-300 max-w-3xl mx-auto mt-8 leading-relaxed">
                         Comprehensive solutions tailored to elevate your brand and drive measurable results
@@ -146,7 +147,7 @@ const OurServices = () => {
                             >
                                 {/* Colorful Border */}
                                 <div
-                                    className={`absolute inset-0 bg-gradient-to-r ${service.gradient} transition-all duration-500 ${
+                                    className={`absolute inset-0 bg-linear-to-r ${service.gradient} transition-all duration-500 ${
                                         isActive
                                             ? 'p-1 opacity-100'
                                             : 'p-0.5 opacity-0 group-hover:opacity-100'
@@ -174,7 +175,7 @@ const OurServices = () => {
 
                                 {/* Icon */}
                                 <div
-                                    className={`relative z-10 inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${service.gradient} mb-6 transition-all duration-500 shadow-lg ${
+                                    className={`relative z-10 inline-flex items-center justify-center w-16 h-16 bg-linear-to-r ${service.gradient} mb-6 transition-all duration-500 shadow-lg ${
                                         isActive
                                             ? 'scale-110 shadow-2xl'
                                             : 'group-hover:scale-110 group-hover:shadow-2xl'
@@ -226,7 +227,7 @@ const OurServices = () => {
                                 </div>
 
                                 {/* Gradient Bottom Line */}
-                                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${service.gradient} transition-all duration-500 ${
+                                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r ${service.gradient} transition-all duration-500 ${
                                     isActive
                                         ? 'opacity-100'
                                         : 'opacity-0 group-hover:opacity-100'
