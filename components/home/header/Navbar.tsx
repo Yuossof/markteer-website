@@ -20,13 +20,13 @@ const Navbar = () => {
       <div className="w-full bg-header-background h-[75px] shadow-slate-700/15 shadow-lg px-7 flex items-center justify-between">
         
         {/* Logo */}
-        <div>
+        <Link href={"/"}>
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight transition-all duration-300">
             <span className="text-[#E6F6FE]">Market</span>
             <span className="text-[#25B4F8]">ee</span>
             <span className="text-[#1376F8]">r</span>
           </h1>
-        </div>
+        </Link>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-6">
