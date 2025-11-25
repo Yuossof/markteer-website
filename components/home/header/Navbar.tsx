@@ -21,7 +21,7 @@ const Navbar = () => {
         
         {/* Logo */}
         <Link href={"/"}>
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight transition-all duration-300">
+          <h1 className="text-4xl md:text-5xl font-bold transition-all duration-300">
             <span className="text-[#E6F6FE]">Market</span>
             <span className="text-[#25B4F8]">ee</span>
             <span className="text-[#1376F8]">r</span>
