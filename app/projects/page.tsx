@@ -133,8 +133,8 @@ const ProjectsPage = () => {
             <div className="max-w-[1800px] mx-auto relative z-10">
                 {/* Header Section */}
                 <div className="text-center mb-16">
-                    <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">
-                        OUR <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400">PROJECTS</span>
+                    <h1 className="text-5xl md:text-6xl font-black text-white mb-6 tracking-tight">
+                        OUR <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-400 via-pink-400 to-cyan-400">PROJECTS</span>
                     </h1>
                     <p className="text-xl text-gray-400 max-w-3xl mx-auto">
                         Explore our portfolio of successful projects across various industries
@@ -154,7 +154,7 @@ const ProjectsPage = () => {
                         >
                             <div className={`absolute inset-0 transition-all duration-300 ${
                                 filter === category.id
-                                    ? 'bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500'
+                                    ? 'bg-linear-to-r from-purple-500 via-pink-500 to-cyan-500'
                                     : 'bg-gray-800 group-hover:bg-gray-700'
                             }`} />
 
@@ -184,7 +184,7 @@ const ProjectsPage = () => {
                 </div>
 
                 {/* Projects Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                     {filteredProjects.map((project) => (
                         <div
                             key={project.id}
@@ -197,7 +197,7 @@ const ProjectsPage = () => {
                         >
                             {/* Border */}
                             <div
-                                className={`absolute inset-0 bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 transition-all duration-500 ${
+                                className={`absolute inset-0 bg-linear-to-br from-purple-500 via-pink-500 to-cyan-500 transition-all duration-500 ${
                                     hoveredId === project.id ? 'p-1' : 'p-px'
                                 }`}
                                 style={{
@@ -224,7 +224,7 @@ const ProjectsPage = () => {
                                     />
 
                                     {/* Gradient Overlay */}
-                                    <div className={`absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent transition-opacity duration-300 ${
+                                    <div className={`absolute inset-0 bg-linear-to-t from-black via-black/80 to-transparent transition-opacity duration-300 ${
                                         hoveredId === project.id ? 'opacity-95' : 'opacity-80'
                                     }`} />
 
