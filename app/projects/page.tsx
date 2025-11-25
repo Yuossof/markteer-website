@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client"
 import React, { useState } from 'react';
-import { ExternalLink, Github, Eye, ArrowUpRight } from 'lucide-react';
 
 const ProjectsPage = () => {
     const [filter, setFilter] = useState('all');
@@ -10,151 +9,173 @@ const ProjectsPage = () => {
     const projects = [
         {
             id: 1,
-            title: "E-Commerce Platform",
-            description: "Modern e-commerce solution with advanced features",
-            category: "web",
-            image: "https://images.unsplash.com/photo-1661288378434-a69c00b39830?w=600&h=400&fit=crop",
-            gradient: "from-purple-500 via-pink-500 to-red-500",
-            tech: ["React", "Node.js"],
-            color: "#a855f7"
+            title: "Complete Brand Identity Development",
+            category: "branding",
+            client: "Tech Innovation Corp",
+            image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop",
+            services: ["Logo Design", "Brand Guidelines", "Print Materials"],
         },
         {
             id: 2,
-            title: "Mobile Banking App",
-            description: "Secure mobile banking with biometric auth",
-            category: "mobile",
-            image: "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=300&fit=crop",
-            gradient: "from-blue-500 via-purple-500 to-pink-500",
-            tech: ["React Native", "Firebase"],
-            color: "#3b82f6"
+            title: "Integrated Digital Marketing Campaign",
+            category: "digital-marketing",
+            client: "Success Business Group",
+            image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&h=600&fit=crop",
+            services: ["Social Media Management", "Paid Ads", "Content Writing"],
         },
         {
             id: 3,
-            title: "AI Dashboard",
-            description: "AI-powered analytics dashboard",
-            category: "web",
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
-            gradient: "from-green-500 via-blue-500 to-purple-500",
-            tech: ["Vue.js", "Python"],
-            color: "#10b981"
+            title: "E-Commerce Mobile Application",
+            category: "web-mobile",
+            client: "Elegance Store",
+            image: "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800&h=600&fit=crop",
+            services: ["iOS App", "Android App", "Admin Dashboard"],
         },
         {
             id: 4,
-            title: "Brand Identity Design",
-            description: "Complete brand identity package",
-            category: "design",
-            image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop",
-            gradient: "from-yellow-500 via-orange-500 to-red-500",
-            tech: ["Figma", "Illustrator"],
-            color: "#f59e0b"
+            title: "Comprehensive Marketing Strategy",
+            category: "consultancy",
+            client: "Investment Pioneer Company",
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
+            services: ["Market Analysis", "Marketing Plan", "Specialized Consulting"],
         },
         {
             id: 5,
-            title: "Task Management Tool",
-            description: "Collaborative task management app",
-            category: "web",
-            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop",
-            gradient: "from-cyan-500 via-blue-500 to-purple-500",
-            tech: ["Angular", "Express"],
-            color: "#06b6d4"
+            title: "Professional Promotional Video Production",
+            category: "media-production",
+            client: "Horizon Foundation",
+            image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&h=600&fit=crop",
+            services: ["Script Writing", "Filming", "Editing"],
         },
         {
             id: 6,
-            title: "Restaurant Menu App",
-            description: "Digital menu with QR integration",
-            category: "mobile",
-            image: "https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=400&h=300&fit=crop",
-            gradient: "from-lime-500 via-green-500 to-blue-500",
-            tech: ["Flutter", "Dart"],
-            color: "#84cc16"
+            title: "International Trade Exhibition Organization",
+            category: "events",
+            client: "International Exhibition Center",
+            image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop",
+            services: ["Planning", "Management", "Coordination"],
         },
         {
             id: 7,
-            title: "Social Media Campaign",
-            description: "Complete social media marketing",
-            category: "design",
-            image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=400&fit=crop",
-            gradient: "from-pink-500 via-purple-500 to-indigo-500",
-            tech: ["After Effects", "Premiere"],
-            color: "#ec4899"
+            title: "Product Launch Event Media Coverage",
+            category: "photography",
+            client: "Advanced Technology Company",
+            image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&h=600&fit=crop",
+            services: ["Photography", "Videography", "Live Streaming"],
         },
         {
             id: 8,
-            title: "Fitness Tracking App",
-            description: "Comprehensive fitness tracking",
-            category: "mobile",
-            image: "https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?w=400&h=300&fit=crop",
-            gradient: "from-orange-500 via-red-500 to-pink-500",
-            tech: ["Swift", "CoreData"],
-            color: "#f97316"
+            title: "Interactive Website Development",
+            category: "web-mobile",
+            client: "Financial Services Company",
+            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+            services: ["UI/UX Design", "Frontend Development", "Backend Development"],
+        },
+        {
+            id: 9,
+            title: "Social Media Advertising Campaign",
+            category: "digital-marketing",
+            client: "Modern Fashion Brand",
+            image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=600&fit=crop",
+            services: ["Ad Management", "Content Creation", "Performance Analysis"],
+        },
+        {
+            id: 10,
+            title: "Promotional Materials Design & Print",
+            category: "branding",
+            client: "Specialized Medical Complex",
+            image: "https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?w=800&h=600&fit=crop",
+            services: ["Brochures", "Banners", "Promotional Gifts"],
+        },
+        {
+            id: 11,
+            title: "Annual Conference Organization",
+            category: "events",
+            client: "Professionals Association",
+            image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=600&fit=crop",
+            services: ["Full Planning", "Guest Management", "Live Broadcasting"],
+        },
+        {
+            id: 12,
+            title: "Business Development Consulting",
+            category: "consultancy",
+            client: "Tech Startup",
+            image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop",
+            services: ["Feasibility Study", "Business Plan", "Growth Strategy"],
         }
     ];
 
     const categories = [
         { id: 'all', label: 'All Projects', count: projects.length },
-        { id: 'web', label: 'Web Development', count: projects.filter(p => p.category === 'web').length },
-        { id: 'mobile', label: 'Mobile Apps', count: projects.filter(p => p.category === 'mobile').length },
-        { id: 'design', label: 'Design', count: projects.filter(p => p.category === 'design').length }
+        { id: 'branding', label: 'Branding', count: projects.filter(p => p.category === 'branding').length },
+        { id: 'digital-marketing', label: 'Digital Marketing', count: projects.filter(p => p.category === 'digital-marketing').length },
+        { id: 'web-mobile', label: 'Web & Mobile', count: projects.filter(p => p.category === 'web-mobile').length },
+        { id: 'consultancy', label: 'Consultancy', count: projects.filter(p => p.category === 'consultancy').length },
+        { id: 'media-production', label: 'Media Production', count: projects.filter(p => p.category === 'media-production').length },
+        { id: 'events', label: 'Events', count: projects.filter(p => p.category === 'events').length },
+        { id: 'photography', label: 'Photography', count: projects.filter(p => p.category === 'photography').length }
     ];
 
     const filteredProjects = filter === 'all' ? projects : projects.filter(project => project.category === filter);
 
     return (
         <div className="min-h-screen bg-black relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
+            {/* Background Effects */}
             <div className="absolute inset-0">
                 <div
                     className="absolute top-0 left-0 w-full h-full opacity-10"
                     style={{
-                        background: `
-              radial-gradient(ellipse 800px 600px at top left, 
-                #a855f7 0%, 
-                #ec4899 50%, 
-                transparent 100%
-              )
-            `
+                        background: `radial-gradient(ellipse 800px 600px at top left, #a855f7 0%, #ec4899 50%, transparent 100%)`
                     }}
-                ></div>
+                />
             </div>
 
-            <div className="max-w-7xl mx-auto relative z-10">
+            <div className="max-w-[1800px] mx-auto relative z-10">
+                {/* Header Section */}
                 <div className="text-center mb-16">
-                    <h1 className="text-5xl md:text-7xl font-black text-white mb-4 tracking-tight">
-                        OUR PROJECTS
+                    <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">
+                        OUR <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400">PROJECTS</span>
                     </h1>
-                    <div className="w-24 h-1 bg-linear-to-r from-purple-500 via-pink-500 to-cyan-500 mx-auto mb-6"></div>
-                    <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                        Explore our portfolio of innovative projects that showcase our expertise
+                    <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                        Explore our portfolio of successful projects across various industries
                     </p>
                 </div>
 
+                {/* Filter Categories */}
                 <div className="flex flex-wrap justify-center gap-3 mb-12">
                     {categories.map((category) => (
                         <button
                             key={category.id}
                             onClick={() => setFilter(category.id)}
-                            className="relative group"
+                            className="relative group transition-all duration-300"
                             style={{
                                 clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))'
                             }}
                         >
-                            <div className={`absolute inset-0 ${filter === category.id
-                                    ? 'bg-linear-to-r from-purple-500 via-pink-500 to-cyan-500'
-                                    : 'bg-gray-800'
-                                }`}></div>
+                            <div className={`absolute inset-0 transition-all duration-300 ${
+                                filter === category.id
+                                    ? 'bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500'
+                                    : 'bg-gray-800 group-hover:bg-gray-700'
+                            }`} />
 
-                            <div className="relative px-6 py-3 bg-gray-950 m-px font-semibold flex items-center gap-2"
+                            <div 
+                                className="relative px-5 py-3 bg-gray-950 m-px font-semibold flex items-center gap-2"
                                 style={{
                                     clipPath: 'polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 7px 100%, 0 calc(100% - 7px))'
                                 }}
                             >
-                                <span className={`transition-colors ${filter === category.id ? 'text-white' : 'text-gray-400 group-hover:text-gray-200'
-                                    }`}>
+                                <span className={`transition-colors text-sm ${
+                                    filter === category.id 
+                                        ? 'text-white' 
+                                        : 'text-gray-400 group-hover:text-gray-200'
+                                }`}>
                                     {category.label}
                                 </span>
-                                <span className={`text-xs px-2 py-0.5 rounded-full ${filter === category.id
+                                <span className={`text-xs px-2 py-0.5 rounded-full transition-all ${
+                                    filter === category.id
                                         ? 'bg-white/20 text-white'
-                                        : 'bg-gray-800 text-gray-500'
-                                    }`}>
+                                        : 'bg-gray-800 text-gray-500 group-hover:bg-gray-700'
+                                }`}>
                                     {category.count}
                                 </span>
                             </div>
@@ -162,21 +183,23 @@ const ProjectsPage = () => {
                     ))}
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {filteredProjects.map((project, index) => (
+                {/* Projects Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    {filteredProjects.map((project) => (
                         <div
                             key={project.id}
-                            className={`group relative ${index === 0 || index === 3 ? 'lg:col-span-2 lg:row-span-1' : ''
-                                }`}
+                            className="group relative h-[400px] cursor-pointer"
                             style={{
                                 clipPath: 'polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px))'
                             }}
                             onMouseEnter={() => setHoveredId(project.id)}
                             onMouseLeave={() => setHoveredId(null)}
                         >
+                            {/* Border */}
                             <div
-                                className={`absolute inset-0 bg-linear-to-br transition-all duration-300 ${project.gradient} ${hoveredId === project.id ? 'p-0.5' : 'p-px'
-                                    }`}
+                                className={`absolute inset-0 bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 transition-all duration-500 ${
+                                    hoveredId === project.id ? 'p-1' : 'p-px'
+                                }`}
                                 style={{
                                     clipPath: 'polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px))'
                                 }}
@@ -186,116 +209,57 @@ const ProjectsPage = () => {
                                     style={{
                                         clipPath: 'polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px))'
                                     }}
-                                ></div>
+                                />
                             </div>
 
-                            <div className="relative z-10 h-full">
-                                <div className={`relative overflow-hidden ${index === 0 || index === 3 ? 'h-48' : 'h-40'
-                                    }`}>
+                            {/* Content */}
+                            <div className="relative z-10 h-full overflow-hidden">
+                                <div className="relative h-full">
                                     <img
                                         src={project.image}
                                         alt={project.title}
-                                        className={`w-full h-full object-cover transition-transform duration-500 ${hoveredId === project.id ? 'scale-105' : 'scale-100'
-                                            }`}
+                                        className={`w-full h-full object-cover transition-transform duration-700 ${
+                                            hoveredId === project.id ? 'scale-110' : 'scale-100'
+                                        }`}
                                     />
 
-                                    <div className={`absolute inset-0 bg-linear-to-t from-gray-950 via-gray-950/40 to-transparent transition-opacity duration-300 ${hoveredId === project.id ? 'opacity-80' : 'opacity-60'
-                                        }`}></div>
+                                    {/* Gradient Overlay */}
+                                    <div className={`absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent transition-opacity duration-300 ${
+                                        hoveredId === project.id ? 'opacity-95' : 'opacity-80'
+                                    }`} />
 
-                                    <div className="absolute top-3 right-3 z-20">
-                                        <div
-                                            className="px-2 py-1 rounded text-xs font-semibold text-white uppercase"
-                                            style={{
-                                                background: `${project.color}40`,
-                                                border: `1px solid ${project.color}60`
-                                            }}
-                                        >
-                                            {project.category}
+                                    {/* Project Information */}
+                                    <div className="absolute bottom-0 left-0 right-0 p-5">
+                                        {/* Client Name */}
+                                        <div className="mb-2">
+                                            <span className="text-xs text-gray-400 font-medium">
+                                                {project.client}
+                                            </span>
+                                        </div>
+
+                                        {/* Project Title */}
+                                        <h3 className="text-xl font-black text-white mb-3 tracking-tight">
+                                            {project.title}
+                                        </h3>
+
+                                        {/* Services Tags */}
+                                        <div className={`flex flex-wrap gap-2 transition-all duration-500 ${
+                                            hoveredId === project.id ? 'opacity-100 translate-y-0' : 'opacity-70 translate-y-2'
+                                        }`}>
+                                            {project.services.map((service, serviceIndex) => (
+                                                <span
+                                                    key={serviceIndex}
+                                                    className="px-3 py-1 text-xs rounded-full font-semibold backdrop-blur-md bg-purple-500/30 text-white border border-purple-500/50"
+                                                >
+                                                    {service}
+                                                </span>
+                                            ))}
                                         </div>
                                     </div>
-
-                                    <div className={`absolute inset-0 flex items-center justify-center gap-2 transition-all duration-300 ${hoveredId === project.id ? 'opacity-100' : 'opacity-0'
-                                        }`}>
-                                        {[Eye, ExternalLink, Github].map((Icon, i) => (
-                                            <button
-                                                key={i}
-                                                className="w-10 h-10 rounded-full backdrop-blur-md flex items-center justify-center text-white hover:scale-110 transition-transform duration-200"
-                                                style={{
-                                                    background: `${project.color}50`,
-                                                    border: `1px solid ${project.color}70`
-                                                }}
-                                            >
-                                                <Icon className="w-4 h-4" />
-                                            </button>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                <div className="p-4">
-                                    <div className="flex flex-wrap gap-1 mb-2">
-                                        {project.tech.map((tech, techIndex) => (
-                                            <span
-                                                key={techIndex}
-                                                className="px-2 py-0.5 text-xs rounded font-medium transition-colors"
-                                                style={{
-                                                    background: hoveredId === project.id ? `${project.color}20` : '#1e293b',
-                                                    color: hoveredId === project.id ? '#fff' : '#94a3b8'
-                                                }}
-                                            >
-                                                {tech}
-                                            </span>
-                                        ))}
-                                    </div>
-
-                                    <h3 className="text-lg font-bold text-white mb-1">
-                                        {project.title}
-                                    </h3>
-
-                                    <p className="text-gray-400 text-sm mb-3">
-                                        {project.description}
-                                    </p>
-
-                                    <button
-                                        className={`flex items-center gap-2 text-sm font-semibold transition-all duration-300 ${hoveredId === project.id ? 'translate-x-1' : ''
-                                            }`}
-                                        style={{
-                                            color: hoveredId === project.id ? project.color : '#6b7280'
-                                        }}
-                                    >
-                                        <span>View Details</span>
-                                        <ArrowUpRight className="w-3 h-3" />
-                                    </button>
                                 </div>
                             </div>
                         </div>
                     ))}
-                </div>
-
-                <div className="mt-16 text-center">
-                    <button
-                        className="relative inline-flex items-center px-10 py-4 font-semibold text-white group"
-                        style={{
-                            clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))'
-                        }}
-                    >
-                        <div className="absolute inset-0 bg-linear-to-r from-purple-500 via-pink-500 to-cyan-500"
-                            style={{
-                                clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))'
-                            }}
-                        ></div>
-
-                        <div
-                            className="absolute inset-0 bg-gray-950 m-px group-hover:bg-gray-900 transition-colors"
-                            style={{
-                                clipPath: 'polygon(0 0, calc(100% - 9px) 0, 100% 9px, 100% 100%, 9px 100%, 0 calc(100% - 9px))'
-                            }}
-                        ></div>
-
-                        <span className="relative flex items-center gap-2">
-                            View More Projects
-                            <ExternalLink className="w-5 h-5" />
-                        </span>
-                    </button>
                 </div>
             </div>
         </div>

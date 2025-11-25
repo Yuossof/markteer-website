@@ -213,8 +213,8 @@ const OurServices = () => {
                                     {/* Colorful Border */}
                                     <div
                                         className={`absolute inset-0 bg-linear-to-r ${service.gradient} transition-all duration-500 ${isActive
-                                                ? 'p-1 opacity-100'
-                                                : 'p-0.5 opacity-0 group-hover:opacity-100 group-hover:p-1'
+                                                ? 'p-0.5 opacity-100'
+                                                : 'p-0.5 opacity-0 group-hover:opacity-100 group-hover:p-0.5'
                                             }`}
                                         style={{
                                             clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px))'
