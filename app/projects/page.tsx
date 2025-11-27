@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client"
+import Link from 'next/link';
 import React, { useState } from 'react';
 
 const ProjectsPage = () => {
@@ -186,7 +187,8 @@ const ProjectsPage = () => {
                 {/* Projects Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                     {filteredProjects.map((project) => (
-                        <div
+                        <Link
+                        href={`/projects/${project.id}`}
                             key={project.id}
                             className="group relative h-[400px] cursor-pointer"
                             style={{
@@ -258,7 +260,7 @@ const ProjectsPage = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>
