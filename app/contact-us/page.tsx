@@ -295,6 +295,7 @@ const ContactPage = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
+                    aria-label="Send contact form message"
                     className="w-full px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-700 hover:to-pink-700 disabled:from-gray-600 disabled:to-gray-700 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center group"
                     style={{
                       clipPath: 'polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px))'
@@ -444,6 +445,7 @@ const ContactPage = () => {
             <div className="flex flex-wrap gap-4 justify-center">
               <a
                 href="tel:+201149811263"
+                aria-label="Call us at +201149811263"
                 className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 group"
                 style={{
                   clipPath: 'polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))'
@@ -457,6 +459,7 @@ const ContactPage = () => {
                 href="https://wa.me/201149811263"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Contact us on WhatsApp"
                 className="inline-flex items-center px-8 py-4 bg-green-600 text-white font-semibold hover:bg-green-700 transition-all duration-300 group"
                 style={{
                   clipPath: 'polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))'
@@ -470,6 +473,7 @@ const ContactPage = () => {
               
               <a
                 href="mailto:Info@marketeereg.com"
+                aria-label="Send email to Info@marketeereg.com"
                 className="inline-flex items-center px-8 py-4 bg-slate-800 text-white font-semibold hover:bg-slate-700 transition-all duration-300 border border-slate-700 group"
                 style={{
                   clipPath: 'polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))'
