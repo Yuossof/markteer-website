@@ -116,10 +116,10 @@ const ContactPage = () => {
               <span className="text-purple-400 text-sm font-medium">Get in Touch</span>
             </div>
             <h1 className="text-5xl md:text-6xl font-black text-white mb-6 tracking-tight">
-              Let's Work <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Together</span>
+              Let&apos;s Work <span className="bg-linear-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Together</span>
             </h1>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Have a project in mind? We'd love to hear about it. Send us a message and we'll get back to you as soon as possible.
+              Have a project in mind? We&apos;d love to hear about it. Send us a message and we&apos;ll get back to you as soon as possible.
             </p>
           </div>
 
@@ -136,7 +136,7 @@ const ContactPage = () => {
                   }}
                 >
                   <div 
-                    className={`w-14 h-14 bg-gradient-to-r ${item.color} p-3 mb-4 group-hover:scale-110 transition-transform duration-300`}
+                    className={`w-14 h-14 bg-linear-to-r ${item.color} p-3 mb-4 group-hover:scale-110 transition-transform duration-300`}
                     style={{
                       clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))'
                     }}
@@ -174,7 +174,7 @@ const ContactPage = () => {
                     }}
                   >
                     <CheckCircle className="w-5 h-5 text-green-400 mr-3" />
-                    <span className="text-green-400">Message sent successfully! We'll get back to you soon.</span>
+                    <span className="text-green-400">Message sent successfully! We&apos;ll get back to you soon.</span>
                   </div>
                 )}
 

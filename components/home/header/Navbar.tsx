@@ -3,6 +3,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
+import { servicesNames } from "@/data/services-data";
 
 const links = [
   { name: "Home", href: "/" },
@@ -10,9 +11,14 @@ const links = [
   { name: "About US", href: "/about-us" },
   {
     name: "Services", menu: [
-      { name: "Web dev", href: "/services/web" },
-      { name: "Mobile", href: "/services/mobile" }, // تم تصحيح الخطأ
-      { name: "Marketing", href: "/services/marketing" },
+      { name: "Social Media & Digital Marketing", href: `/services/${servicesNames.socialMediaMarketing}` },
+      { name: "Web & Mobile Development.", href: `/services/${servicesNames.webMobileDevelopment}` },
+      { name: "Marketing Consultancy & Strategic Planning.", href: `/services/${servicesNames.marketingConsultancy}` },
+      { name: "Media Production.", href: `/services/${servicesNames.mediaProduction}` },
+      { name: "Branding Development.", href: `/services/${servicesNames.brandingDevelopment}` },
+      { name: "Photography & Media Coverage.", href: `/services/${servicesNames.photographyMedia}` },
+      { name: "Events Planning.", href: `/services/${servicesNames.eventsPlanning}` },
+
     ]
   },
   { name: "Contact US", href: "/contact-us" },
@@ -56,23 +62,36 @@ const Navbar = () => {
                 {/* Desktop submenu */}
                 <div
                   className="
-    absolute -left-6 top-full mt-2 
-     opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-    transition-all min-w-[150px]
-
-    bg-black/70 backdrop-blur-2xl shadow-xl 
+    absolute -right-6 top-full mt-4 
+    opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+    transition-all
+    w-max
+    filter drop-shadow-[0_8px_20px_rgba(37,180,248,0.6)]
   "
                 >
-                  {link.menu?.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className="block px-4 py-1 uppercase text-gray-400 transition hover:scale-105 text-sm hover:text-gray-200"
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
+                  <div
+                    className="
+      bg-black backdrop-blur-2xl 
+      px-2 py-2 w-max
+    "
+                    style={{
+                      clipPath:
+                        "polygon(0 0, 100% 0, 100% calc(100% - 35px), calc(100% - 35px) 100%, 0 100%)"
+                    }}
+                  >
+                    {link.menu?.map((item) => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        className="block px-4 py-1 uppercase text-gray-400 transition hover:scale-105 text-sm hover:text-gray-200"
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
+
+
               </div>
             )
           )}
