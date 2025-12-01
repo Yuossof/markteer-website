@@ -144,6 +144,15 @@ const OurServices = () => {
                                 style={{
                                     clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px))'
                                 }}
+                                role="button"
+                                tabIndex={0}
+                                aria-label={`${service.title} service - ${service.description}`}
+                                onClick={() => setActiveIndex(index)}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter' || e.key === ' ') {
+                                        setActiveIndex(index);
+                                    }
+                                }}
                             >
                                 {/* Colorful Border */}
                                 <div

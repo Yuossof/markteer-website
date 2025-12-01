@@ -45,7 +45,7 @@ const Hero = () => {
                 className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 
                 w-[90%] sm:w-[80%] md:w-[75%] h-[50%] sm:h-[55%] md:h-[65%] opacity-60 
                 rounded-[40px] blur-[50px] sm:blur-[75px] md:blur-[100px] 
-                bg-gradient-to-br ${gradients[mainImage]}
+                bg-linear-to-br ${gradients[mainImage]}
                 transition-all duration-500
                 `}
             ></div>
@@ -55,7 +55,7 @@ const Hero = () => {
                 <div className="absolute left-[5px] top-[35%] w-[300px] md:w-[600px] h-[250px] md:h-[450px] bg-[#ff5a1f] opacity-90 blur-[30px] md:blur-[50px] mix-blend-screen"></div>
                 <div className="absolute left-[5px] top-[15%] w-[300px] md:w-[600px] h-[250px] md:h-[450px] bg-[#c04f4f] opacity-90 blur-[30px] md:blur-[50px] mix-blend-screen"></div>
                 <div className="absolute left-[50px] top-[65%] w-[275px] md:w-[550px] h-[200px] md:h-[400px] bg-[#16095f] opacity-90 blur-[35px] md:blur-[55px] mix-blend-screen"></div>
-                <div className="absolute left-[200px] md:left-[400px] bottom-[5%] w-[300px] md:w-[600px] h-[250px] md:h-[500px] bg-[#6b1540] opacity-80 blur-[40px] md:blur-[60px] mix-blend-screen"></div>
+                <div className="absolute left-[200px] md:left-[400px] bottom-[5%] w-[300px] md:w-[600px] h-[250px] md:h-[500px] bg-[#6b1540] opacity-80 blur-2xl md:blur-[60px] mix-blend-screen"></div>
             </div>
 
             <div className="relative z-10 flex h-full items-center w-full justify-center pt-8 md:pt-14">
@@ -85,7 +85,7 @@ const Hero = () => {
                                 <h3 className="text-center text-xs lg:text-sm font-bold text-white">Clubhouse A</h3>
                             </div>
 
-                            <button className="absolute bottom-2 lg:bottom-3.5 left-1/2 -translate-x-1/2 
+                            <button aria-label="Get started with Clubhouse A" className="absolute bottom-2 lg:bottom-3.5 left-1/2 -translate-x-1/2 
                                 py-1.5 lg:py-2.5 w-[70%] cursor-pointer opacity-0
                                 bg-white/10 backdrop-blur-md border border-white/20
                                 text-white text-xs lg:text-sm font-medium rounded-[50px]
@@ -99,7 +99,7 @@ const Hero = () => {
                         <div
                             onMouseEnter={() => handleHover(img2)}
                             onClick={() => handleClick(img2)}
-                            className="group flex-shrink-0 w-[140px] sm:w-[180px] md:w-[220px] lg:w-[260px] 
+                            className="group shrink-0 w-[140px] sm:w-[180px] md:w-[220px] lg:w-[260px] 
                             h-[100px] sm:h-[120px] md:h-[140px] lg:h-[25%] 
                             relative overflow-hidden shadow-xl cursor-pointer"
                             style={{ clipPath: "polygon(92% 0, 100% 15%, 100% 100%, 8% 100%, 0 92%, 0 0)" }}
@@ -116,7 +116,7 @@ const Hero = () => {
                                 <h3 className="text-center text-xs lg:text-sm font-bold text-white">Clubhouse B</h3>
                             </div>
 
-                            <button className="absolute bottom-2 lg:bottom-3.5 left-1/2 -translate-x-1/2 
+                            <button aria-label="Get started with Clubhouse B" className="absolute bottom-2 lg:bottom-3.5 left-1/2 -translate-x-1/2 
                                 py-1.5 lg:py-2.5 w-[70%] cursor-pointer opacity-0
                                 bg-white/10 backdrop-blur-md border border-white/20
                                 text-white text-xs lg:text-sm font-medium rounded-[50px]
@@ -130,7 +130,7 @@ const Hero = () => {
                         <div
                             onMouseEnter={() => handleHover(img3)}
                             onClick={() => handleClick(img3)}
-                            className="group flex-shrink-0 w-[140px] sm:w-[180px] md:w-[220px] lg:w-[260px] 
+                            className="group shrink-0 w-[140px] sm:w-[180px] md:w-[220px] lg:w-[260px] 
                             h-[100px] sm:h-[120px] md:h-[140px] lg:h-[25%] 
                             relative overflow-hidden shadow-xl cursor-pointer"
                             style={{ clipPath: "polygon(92% 0, 100% 15%, 100% 100%, 8% 100%, 0 92%, 0 0)" }}
@@ -147,7 +147,7 @@ const Hero = () => {
                                 <h3 className="text-center text-xs lg:text-sm font-bold text-white">Clubhouse C</h3>
                             </div>
 
-                            <button className="absolute bottom-2 lg:bottom-3.5 left-1/2 -translate-x-1/2 
+                            <button aria-label="Get started with Clubhouse C" className="absolute bottom-2 lg:bottom-3.5 left-1/2 -translate-x-1/2 
                                 py-1.5 lg:py-2.5 w-[70%] cursor-pointer opacity-0
                                 bg-white/10 backdrop-blur-md border border-white/20
                                 text-white text-xs lg:text-sm font-medium rounded-[50px]
@@ -191,7 +191,7 @@ const Hero = () => {
 
                         {/* Mobile CTA Button */}
                         <div className="mt-6 text-center lg:hidden">
-                            <button className="py-3 px-8 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-full transition">
+                            <button aria-label="Get Started" className="py-3 px-8 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-full transition">
                                 Get Started
                             </button>
                         </div>

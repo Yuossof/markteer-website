@@ -7,7 +7,6 @@ import Link from 'next/link';
 const ProjectDetailsPage = () => {
     const [selectedImage, setSelectedImage] = useState(0);
 
-    // بيانات المشروع (يمكن استبدالها بـ props أو API call)
     const project = {
         id: 1,
         title: "E-Commerce Mobile Application",
@@ -67,6 +66,7 @@ const ProjectDetailsPage = () => {
                 <Link 
                     href="/projects"
                     className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8 group"
+                    aria-label="Back to Projects"
                 >
                     <ArrowLeft className="w-5 h-5 transition-transform group-hover:-translate-x-1" />
                     <span>Back to Projects</span>
@@ -103,11 +103,12 @@ const ProjectDetailsPage = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="relative group"
+                            aria-label="View Live Demo"
                             style={{
                                 clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))'
                             }}
                         >
-                            <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500"
+                            <div className="absolute inset-0 bg-linear-to-r from-purple-500 via-pink-500 to-cyan-500"
                                 style={{
                                     clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))'
                                 }}
@@ -128,6 +129,7 @@ const ProjectDetailsPage = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="relative group"
+                            aria-label="View on GitHub"
                             style={{
                                 clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))'
                             }}
@@ -158,7 +160,7 @@ const ProjectDetailsPage = () => {
                             clipPath: 'polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px))'
                         }}
                     >
-                        <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 p-1"
+                        <div className="absolute inset-0 bg-linear-to-r from-purple-500 via-pink-500 to-cyan-500 p-1"
                             style={{
                                 clipPath: 'polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px))'
                             }}
@@ -187,6 +189,7 @@ const ProjectDetailsPage = () => {
                             className={`relative h-32 md:h-40 overflow-hidden transition-all duration-300 ${
                                 selectedImage === index ? 'ring-2 ring-purple-500' : 'opacity-60 hover:opacity-100'
                             }`}
+                            aria-label={`View project image ${index + 1}`}
                             style={{
                                 clipPath: 'polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px))'
                             }}
@@ -205,7 +208,7 @@ const ProjectDetailsPage = () => {
                     {/* Full Description */}
                     <div>
                         <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                            <div className="w-1 h-8 bg-gradient-to-b from-purple-500 to-pink-500"></div>
+                            <div className="w-1 h-8 bg-linear-to-b from-purple-500 to-pink-500"></div>
                             Project Overview
                         </h2>
                         <p className="text-gray-300 leading-relaxed text-lg">
@@ -216,7 +219,7 @@ const ProjectDetailsPage = () => {
                     {/* Technologies */}
                     <div>
                         <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                            <div className="w-1 h-8 bg-gradient-to-b from-cyan-500 to-blue-500"></div>
+                            <div className="w-1 h-8 bg-linear-to-b from-cyan-500 to-blue-500"></div>
                             Technologies Used
                         </h2>
                         <div className="flex flex-wrap gap-3">
@@ -228,7 +231,7 @@ const ProjectDetailsPage = () => {
                                         clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))'
                                     }}
                                 >
-                                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity"
+                                    <div className="absolute inset-0 bg-linear-to-r from-purple-500 via-pink-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity"
                                         style={{
                                             clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))'
                                         }}
@@ -258,6 +261,7 @@ const ProjectDetailsPage = () => {
                         <Link
                             href="/projects"
                             className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors group"
+                            aria-label="View All Projects"
                         >
                             <span className="font-semibold">View All Projects</span>
                             <ExternalLink className="w-5 h-5 transition-transform group-hover:translate-x-1" />

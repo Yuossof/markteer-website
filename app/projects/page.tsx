@@ -2,7 +2,7 @@
 "use client"
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { ArrowUpRight, Sparkles, Eye, Calendar, Award, TrendingUp } from 'lucide-react';
+import { ArrowUpRight, Eye, Calendar, Award, TrendingUp } from 'lucide-react';
 
 const ProjectsPage = () => {
     const [hoveredId, setHoveredId] = useState<number | null>(null);
@@ -90,7 +90,7 @@ const ProjectsPage = () => {
                     {/* Header Section */}
                     <div className="text-center mb-20">
                         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-                            Our <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">Projects</span>
+                            Our <span className="bg-linear-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">Projects</span>
                         </h1>
                         <p className="text-xl text-gray-400 max-w-3xl mx-auto">
                             Every project tells a story of transformation and success
@@ -112,7 +112,7 @@ const ProjectsPage = () => {
                                 }}
                             >
                                 {/* Featured Badge */}
-                                <div className="absolute top-6 left-6 z-20 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 flex items-center"
+                                <div className="absolute top-6 left-6 z-20 px-4 py-2 bg-linear-to-r from-purple-600 to-pink-600 flex items-center"
                                     style={{
                                         clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))'
                                     }}
@@ -127,7 +127,7 @@ const ProjectsPage = () => {
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                                 
-                                <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/50 to-transparent"></div>
+                                <div className="absolute inset-0 bg-linear-to-r from-slate-950 via-slate-950/50 to-transparent"></div>
                                 
                                 {/* Content Overlay */}
                                 <div className="absolute bottom-0 left-0 p-12 max-w-3xl">
@@ -155,7 +155,7 @@ const ProjectsPage = () => {
                                 </div>
 
                                 {/* View Project Button */}
-                                <div className="absolute bottom-12 right-12 w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center group-hover:scale-110 transition-transform"
+                                <div className="absolute bottom-12 right-12 w-16 h-16 bg-linear-to-r from-purple-600 to-pink-600 flex items-center justify-center group-hover:scale-110 transition-transform"
                                     style={{
                                         clipPath: 'polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))'
                                     }}
@@ -168,7 +168,7 @@ const ProjectsPage = () => {
 
                     {/* Regular Projects Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-                        {projects.slice(1).map((project, index) => (
+                        {projects.slice(1).map((project) => (
                             <Link
                                 href={`/projects/${project.id}`}
                                 key={project.id}
@@ -189,7 +189,7 @@ const ProjectsPage = () => {
                                             alt={project.title}
                                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+                                        <div className="absolute inset-0 bg-linear-to-t from-slate-900 to-transparent"></div>
                                         
                                         {/* Category Badge */}
                                         <div className="absolute top-4 left-4 px-3 py-1 bg-slate-900/80 backdrop-blur text-xs text-gray-300"
@@ -245,7 +245,7 @@ const ProjectsPage = () => {
                         
                         <div className="relative">
                             {/* Timeline Line */}
-                            <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-gradient-to-b from-purple-600 to-pink-600"></div>
+                            <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-linear-to-b from-purple-600 to-pink-600"></div>
                             
                             {projects.slice(3, 6).map((project, index) => (
                                 <Link 
@@ -278,7 +278,7 @@ const ProjectsPage = () => {
                                     
                                     {/* Timeline Dot */}
                                     <div className="hidden lg:flex w-16 justify-center">
-                                        <div className="w-4 h-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full"></div>
+                                        <div className="w-4 h-4 bg-linear-to-r from-purple-600 to-pink-600 rounded-full"></div>
                                     </div>
                                     
                                     <div className="flex-1 hidden lg:block"></div>
@@ -294,7 +294,7 @@ const ProjectsPage = () => {
                         }}
                     >
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                            Let's Create Your Success Story
+                            Let&apos;s Create Your Success Story
                         </h2>
                         <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
                             Join our growing list of satisfied clients and transform your business with our expertise
@@ -302,7 +302,7 @@ const ProjectsPage = () => {
                         <div className="flex flex-wrap gap-4 justify-center">
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center px-10 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:shadow-lg hover:shadow-purple-500/30 transition-all group"
+                                className="inline-flex items-center px-10 py-4 bg-linear-to-r from-purple-600 to-pink-600 text-white font-semibold hover:shadow-lg hover:shadow-purple-500/30 transition-all group"
                                 style={{
                                     clipPath: 'polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px))'
                                 }}

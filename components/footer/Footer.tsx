@@ -163,6 +163,7 @@ const Footer = () => {
                                 <button
                                     type="submit"
                                     className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-linear-to-r from-purple-600 to-pink-600 rounded-md flex items-center justify-center hover:scale-110 transition-transform duration-300"
+                                    aria-label="Subscribe to newsletter"
                                 >
                                     <Send className="w-4 h-4 text-white" />
                                 </button>

@@ -10,8 +10,6 @@ import Link from 'next/link';
 import { servicesData } from '@/data/services-data';
 import { useParams } from 'next/navigation';
 
-
-
 const ServiceDetailPage = () => {
   const params = useParams()
   const serviceName = params["service-name"];
@@ -49,7 +47,7 @@ const ServiceDetailPage = () => {
 
             {/* Service Badge */}
             <div
-              className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 mb-8 mx-auto"
+              className="inline-flex items-center px-4 py-2 bg-linear-to-r from-purple-600 to-pink-600 mb-8 mx-auto"
               style={{
                 clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))'
               }}
@@ -60,7 +58,7 @@ const ServiceDetailPage = () => {
 
             {/* Title */}
             <h1 className="text-5xl md:text-7xl font-bold mb-8">
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
                 {serviceData.title}
               </span>
             </h1>
@@ -73,7 +71,8 @@ const ServiceDetailPage = () => {
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 justify-center">
               <button
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:shadow-lg hover:shadow-purple-500/30 transition-all group"
+                aria-label='Get Started'
+                className="inline-flex cursor-pointer items-center px-8 py-4 bg-linear-to-r from-purple-600 to-pink-600 text-white font-semibold hover:shadow-lg hover:shadow-purple-500/30 transition-all group"
                 style={{
                   clipPath: 'polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))'
                 }}
@@ -83,7 +82,8 @@ const ServiceDetailPage = () => {
               </button>
 
               <button
-                className="inline-flex items-center px-8 py-4 bg-slate-800/50 backdrop-blur border border-slate-700 text-white hover:border-purple-500 transition-all"
+                aria-label='Learn More'
+                className="inline-flex cursor-pointer items-center px-8 py-4 bg-slate-800/50 backdrop-blur border border-slate-700 text-white hover:border-purple-500 transition-all"
                 style={{
                   clipPath: 'polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))'
                 }}
@@ -101,9 +101,9 @@ const ServiceDetailPage = () => {
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="text-white">What's </span>
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Included</span>
+            <h2 className="text-3xl md:text-4xl font-bold mab-4">
+              <span className="text-white">What&apos;s </span>
+              <span className="bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Included</span>
             </h2>
             <p className="text-gray-400 text-lg">
               Everything you need for a successful web presence
@@ -120,7 +120,7 @@ const ServiceDetailPage = () => {
                 }}
               >
                 <div className="flex items-center">
-                  <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                  <div className="w-8 h-8 bg-linear-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mr-3 shrink-0">
                     <Check className="w-4 h-4 text-white" />
                   </div>
                   <h3 className="text-white font-semibold group-hover:text-purple-400 transition-colors">
@@ -152,7 +152,7 @@ const ServiceDetailPage = () => {
               filter: 'blur(80px)',
             }}
           />
-          <div className="absolute right-0 top-1/4 w-64 h-64 bg-gradient-to-br from-purple-500 to-pink-500 opacity-20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute right-0 top-1/4 w-64 h-64 bg-linear-to-br from-purple-500 to-pink-500 opacity-20 rounded-full blur-3xl animate-pulse"></div>
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-6">
@@ -160,10 +160,10 @@ const ServiceDetailPage = () => {
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-white">Recent </span>
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Projects</span>
+              <span className="bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Projects</span>
             </h2>
             <p className="text-gray-400 text-lg">
-              See what we've built for other clients
+              See what we&apos;ve built for other clients
             </p>
           </div>
 
@@ -182,13 +182,13 @@ const ServiceDetailPage = () => {
                   }}
                 >
                   {/* Hover Gradient */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
+                  <div className={`absolute inset-0 bg-linear-to-br ${project.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
 
                   {/* Color Strip */}
-                  <div className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b ${project.color}`}></div>
+                  <div className={`absolute left-0 top-0 bottom-0 w-1 bg-linear-to-b ${project.color}`}></div>
 
                   {/* Project Number */}
-                  <div className={`absolute -right-2 -top-2 w-16 h-16 bg-gradient-to-br ${project.color} flex items-center justify-center`}
+                  <div className={`absolute -right-2 -top-2 w-16 h-16 bg-linear-to-br ${project.color} flex items-center justify-center`}
                     style={{
                       clipPath: 'polygon(0 0, 100% 0, 100% 100%, 20% 100%)'
                     }}
@@ -198,7 +198,7 @@ const ServiceDetailPage = () => {
 
                   {/* Content */}
                   <div className="relative">
-                    <div className={`text-sm font-medium bg-gradient-to-r ${project.color} bg-clip-text text-transparent mb-2`}>
+                    <div className={`text-sm font-medium bg-linear-to-r ${project.color} bg-clip-text text-transparent mb-2`}>
                       {project.client}
                     </div>
                     <h3 className="text-2xl font-semibold text-white mb-3 group-hover:translate-x-2 transition-transform">
@@ -209,7 +209,7 @@ const ServiceDetailPage = () => {
                     </p>
 
                     <div className="inline-flex items-center text-white group-hover:translate-x-2 transition-transform">
-                      <span className={`bg-gradient-to-r ${project.color} bg-clip-text text-transparent font-medium`}>
+                      <span className={`bg-linear-to-r ${project.color} bg-clip-text text-transparent font-medium`}>
                         View Project
                       </span>
                       <ArrowUpRight className="w-4 h-4 ml-2 text-gray-400" />
@@ -224,7 +224,7 @@ const ServiceDetailPage = () => {
           <div className="text-center mt-12">
             <Link
               href="/projects"
-              className="inline-flex items-center px-10 py-4 bg-gradient-to-r from-slate-800 to-slate-700 text-white font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 group"
+              className="inline-flex items-center px-10 py-4 bg-linear-to-r from-slate-800 to-slate-700 text-white font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 group"
               style={{
                 clipPath: 'polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px))'
               }}
@@ -259,11 +259,11 @@ const ServiceDetailPage = () => {
             Ready to Start Your Project?
           </h2>
           <p className="text-gray-300 text-lg mb-8">
-            Let's create something amazing together
+            Let&apos;s create something amazing together
           </p>
 
           <button
-            className="inline-flex items-center px-12 py-5 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 text-white font-semibold text-lg hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-300 group"
+            className="inline-flex items-center px-12 py-5 bg-linear-to-r from-purple-600 via-pink-600 to-orange-600 text-white font-semibold text-lg hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-300 group"
             style={{
               clipPath: 'polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px))'
             }}
