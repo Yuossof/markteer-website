@@ -3,6 +3,7 @@ import { Search, X } from 'lucide-react';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
+
 const ProjectsPage = () => {
     const [scrollY, setScrollY] = useState(0);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -29,7 +30,9 @@ const ProjectsPage = () => {
         "SEO": "border-indigo-500",
         "Content": "border-orange-500",
         "Strategy": "border-teal-500",
-    };
+    } as const;
+
+    type TCategoryName = keyof typeof categoryColors;
 
     const projects = [
         {
@@ -219,7 +222,7 @@ const ProjectsPage = () => {
                                                     {project.categories.slice(0, 2).map((category, index) => (
                                                         <span
                                                             key={index}
-                                                            className={`px-3 py-1 text-sm rounded-full border-2 ${categoryColors[category] || 'border-gray-500'} hover:bg-white/10 transition whitespace-nowrap`}
+                                                            className={`px-3 py-1 text-sm rounded-full border-2 ${categoryColors[category as TCategoryName] || 'border-gray-500'} hover:bg-white/10 transition whitespace-nowrap`}
                                                         >
                                                             {category}
                                                         </span>
@@ -252,7 +255,7 @@ const ProjectsPage = () => {
                                                     {project.categories.slice(0, 2).map((category, index) => (
                                                         <span
                                                             key={index}
-                                                            className={`px-3 py-1 text-sm rounded-full border-2 ${categoryColors[category] || 'border-gray-500'} hover:bg-white/10 transition whitespace-nowrap`}
+                                                            className={`px-3 py-1 text-sm rounded-full border-2 ${categoryColors[category as TCategoryName] || 'border-gray-500'} hover:bg-white/10 transition whitespace-nowrap`}
                                                         >
                                                             {category}
                                                         </span>
