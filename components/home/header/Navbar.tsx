@@ -7,7 +7,7 @@ import { servicesNames } from "@/data/services-data";
 
 const links = [
   { name: "Home", href: "/" },
-  { name: "Projects", href: "/projects" },
+  { name: "Works", href: "/works" },
   { name: "About US", href: "/about-us" },
   {
     name: "Services", menu: [
@@ -18,13 +18,13 @@ const links = [
       { name: "Branding Development.", href: `/services/${servicesNames.brandingDevelopment}` },
       { name: "Photography & Media Coverage.", href: `/services/${servicesNames.photographyMedia}` },
       { name: "Events Planning.", href: `/services/${servicesNames.eventsPlanning}` },
-
     ]
   },
   { name: "Contact US", href: "/contact-us" },
 ];
 
 const Navbar = () => {
+  
   const [open, setOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(false);
 
@@ -33,12 +33,9 @@ const Navbar = () => {
       <div className="w-full bg-header-background h-[75px] shadow-slate-700/15 shadow-lg px-7 flex items-center justify-between">
 
         {/* Logo */}
-        <Link href={"/"}>
-          <h1 className="text-4xl md:text-5xl font-bold transition-all duration-300">
-            <span className="text-[#E6F6FE]">Market</span>
-            <span className="text-[#25B4F8]">ee</span>
-            <span className="text-[#1376F8]">r</span>
-          </h1>
+        <Link href={"/"} className="">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={"/logo/marketeer-logo.png"} className="w-60 h-35" alt="Marketeer" />
         </Link>
 
         {/* Desktop Links */}
@@ -90,8 +87,6 @@ const Navbar = () => {
                     ))}
                   </div>
                 </div>
-
-
               </div>
             )
           )}

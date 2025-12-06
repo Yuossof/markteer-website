@@ -5,8 +5,24 @@
   --foreground: #010101;
   --font-heading: var(--font-bebas);
   --font-body: var(--font-inter);
+  --font-playfair-italic: var(--font-playfair);
 }
 
+.italic-font {
+  font-family: var(--font-playfair);
+  font-style: italic;
+}
+
+.playfair-normal {
+  font-family: var(--font-playfair);
+  font-style: normal;
+}
+
+.group:hover .italic-playfair {
+  font-family: var(--font-playfair);
+  font-style: italic;
+  font-weight: 500;
+}
 
 h1,
 h2,
@@ -25,7 +41,6 @@ li {
 
 
 @theme {
-
   --color-primary: #6B55FF;
   --color-text-primary: #FEE9CE;
   --color-header-background: #010101;
@@ -39,7 +54,7 @@ body {
 
 
 #nprogress .bar {
-  background: #1376f8 !important; 
+  background: #1376f8 !important;
   height: 2px !important;
 }
 

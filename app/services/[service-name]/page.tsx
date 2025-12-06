@@ -24,6 +24,7 @@ const ServiceDetailPage = () => {
       <section className="relative pt-32 pb-24">
         {/* Background Gradients */}
         <div className="absolute inset-0 overflow-hidden">
+
           <div
             className="absolute -right-1/4 top-0 w-3/4 h-full opacity-60"
             style={{

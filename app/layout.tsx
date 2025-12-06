@@ -1,4 +1,4 @@
-import { Bebas_Neue, Inter } from "next/font/google";
+import { Bebas_Neue, Inter, Playfair } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/home/header/Navbar";
 import LoadingProgressBar from "@/components/LoadingProgress";
@@ -15,10 +15,17 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const playfair = Playfair({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  weight: ["400", "500", "600", "700"],
+  style: ["italic", "normal"]
+})
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${bebas.variable} ${inter.variable} text-[#E6F6FE] antialiased`}>
+      <body className={`${bebas.variable} ${inter.variable} ${playfair.variable} text-[#E6F6FE] antialiased`}>
         <Suspense fallback={null}>
           <LoadingProgressBar />
         </Suspense>

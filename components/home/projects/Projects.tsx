@@ -74,7 +74,7 @@ const HomeProjects = () => {
                 ></div>
             </div>
             <div className="max-w-7xl mx-auto px-6 relative">
-                {/* Header */}
+                {/* Header */} 
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight">
                         Featured Projects
@@ -117,7 +117,6 @@ const HomeProjects = () => {
                         <ProjectCard item={projects[6]} wide />
                     </Link>
                 </div>
-
                 <div className="text-center">
                     <Link
                         href={"/projects"}

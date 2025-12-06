@@ -296,7 +296,7 @@ const ContactPage = () => {
                     type="submit"
                     disabled={isSubmitting}
                     aria-label="Send contact form message"
-                    className="w-full px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-700 hover:to-pink-700 disabled:from-gray-600 disabled:to-gray-700 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center group"
+                    className="w-full px-8 py-4 bg-linear-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-700 hover:to-pink-700 disabled:from-gray-600 disabled:to-gray-700 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center group"
                     style={{
                       clipPath: 'polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px))'
                     }}
@@ -377,7 +377,7 @@ const ContactPage = () => {
 
               {/* Quick Response */}
               <div 
-                className="bg-gradient-to-r from-purple-600 to-pink-600 p-8"
+                className="bg-linear-to-r from-purple-600 to-pink-600 p-8"
                 style={{
                   clipPath: 'polygon(0 0, calc(100% - 25px) 0, 100% 25px, 100% 100%, 25px 100%, 0 calc(100% - 25px))'
                 }}
@@ -415,7 +415,7 @@ const ContactPage = () => {
                 clipPath: 'polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px))'
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 to-transparent z-10 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-slate-950/50 to-transparent z-10 pointer-events-none"></div>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.8976737702924!2d31.497!3d30.0667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDA0JzAwLjEiTiAzMcKwMjknNDkuMiJF!5e0!3m2!1sen!2seg!4v1234567890"
                 width="100%"
@@ -439,14 +439,14 @@ const ContactPage = () => {
               Ready to Start Your Project?
             </h2>
             <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-              Don't hesitate to reach out. We're here to help you achieve your digital goals and bring your vision to life.
+              Don&apos;t hesitate to reach out. We&apos;re here to help you achieve your digital goals and bring your vision to life.
             </p>
             
             <div className="flex flex-wrap gap-4 justify-center">
               <a
                 href="tel:+201149811263"
                 aria-label="Call us at +201149811263"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 group"
+                className="inline-flex items-center px-8 py-4 bg-linear-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 group"
                 style={{
                   clipPath: 'polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))'
                 }}
