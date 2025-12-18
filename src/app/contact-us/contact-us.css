@@ -1,0 +1,22 @@
+.gradient-input {
+  border: none;
+  border-bottom: 2px solid #b9b4b4;
+  background-image: linear-gradient(
+    to right,
+    #aa838b,
+    #476adb,
+    #ffd9bf,
+    #ffe1b5,
+    #ffe8ab
+  );
+  background-size: 0 2px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.3s ease;
+}
+
+.gradient-input:focus {
+  outline: none;
+  border-bottom: 2px solid transparent;
+  background-size: 100% 2px;
+}

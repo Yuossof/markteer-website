@@ -1,0 +1,225 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #010101;
+  --font-heading: var(--font-bebas);
+  --font-body: var(--font-inter);
+  --font-playfair-italic: var(--font-playfair);
+}
+
+.service-text {
+  font-family: var(--font-playfair);
+  transition: all 0.3s ease;
+  transform: skewX(0deg);
+}
+
+.service-active {
+  transform: scale(1.2) skewX(-8deg);
+  color: white;
+  font-weight: 700;
+}
+
+.active-el {
+  display: block;
+}
+
+
+.italic-font {
+  font-family: var(--font-playfair);
+  font-style: italic;
+}
+
+.italic-font-nr {
+  font-family: var(--font-playfair);
+  font-style: normal;
+}
+
+
+.playfair-normal {
+  font-family: var(--font-playfair);
+  font-style: normal;
+}
+
+.italic-playfair {
+  font-family: var(--font-playfair) !important;
+  font-style: italic !important;
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  letter-spacing: 2px;
+}
+
+p,
+span,
+a,
+li {
+  font-family: var(--font-body);
+}
+
+@theme {
+  --color-primary: #6B55FF;
+  --color-text-primary: #FEE9CE;
+  --color-header-background: #010101;
+}
+
+body {
+  background-color: var(--foreground);
+}
+
+
+
+#nprogress .bar {
+  background: #1376f8 !important;
+  height: 2px !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #1376f8, 0 0 5px #1376f8 !important;
+}
+
+/* Tiptap Content Display Styles */
+.tiptap-content {
+    font-family: var(--font-poppins);
+
+  color: #111827;
+  line-height: 1.6;
+}
+
+.tiptap-content > * + * {
+  margin-top: 0.75em;
+}
+
+.tiptap-content h1 {
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0.67em 0;
+  color: #111827;
+}
+
+.tiptap-content h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 1.3;
+  margin: 0.75em 0;
+  color: #111827;
+}
+
+.tiptap-content h3 {
+  font-size: 1.25em;
+  font-weight: bold;
+  line-height: 1.4;
+  margin: 0.83em 0;
+  color: #111827;
+}
+
+.tiptap-content h4 {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 1em 0;
+  color: #111827;
+}
+
+.tiptap-content h5 {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 1.2em 0;
+  color: #111827;
+}
+
+.tiptap-content h6 {
+  font-size: 0.9em;
+  font-weight: bold;
+  margin: 1.4em 0;
+  color: #111827;
+}
+
+.tiptap-content p {
+  margin: 0.5em 0;
+}
+
+.tiptap-content ul,
+.tiptap-content ol {
+  padding-left: 1.5em;
+  margin: 0.5em 0;
+}
+
+.tiptap-content ul {
+  list-style-type: disc;
+}
+
+.tiptap-content ol {
+  list-style-type: decimal;
+}
+
+.tiptap-content li {
+  margin: 0.25em 0;
+}
+
+.tiptap-content strong {
+  font-weight: bold;
+  color: #111827;
+}
+
+.tiptap-content em {
+  font-style: italic;
+}
+
+.tiptap-content s {
+  text-decoration: line-through;
+}
+
+.tiptap-content code {
+  background: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  color: #1f2937;
+}
+
+.tiptap-content pre {
+  background: #1f2937;
+  color: #f9fafb;
+  padding: 1em;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 1em 0;
+  font-family: 'Courier New', monospace;
+}
+
+.tiptap-content pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+  font-size: 0.875em;
+}
+
+.tiptap-content blockquote {
+  border-left: 4px solid #d1d5db;
+  padding-left: 1em;
+  color: #6b7280;
+  font-style: italic;
+  margin: 1em 0;
+}
+
+.tiptap-content hr {
+  border: none;
+  border-top: 2px solid #e5e7eb;
+  margin: 2em 0;
+}
+
+.tiptap-content a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.tiptap-content a:hover {
+  color: #1d4ed8;
+}

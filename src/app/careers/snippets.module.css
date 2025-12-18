@@ -1,0 +1,83 @@
+/* src/app/careers/marquee.module.css */
+
+.marqueeWrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.marqueeTrack {
+    display: flex;
+    gap: 24px;
+    width: max-content;
+}
+
+.marqueeItem {
+    flex-shrink: 0;
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+    /* border-radius: 12px; */
+}
+
+.marqueeItem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Animation moving right */
+@keyframes marqueeRight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Animation moving left */
+@keyframes marqueeLeft {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.animateRight {
+    animation: marqueeRight 14s linear infinite;
+}
+
+.animateLeft {
+    animation: marqueeLeft 14s linear infinite;
+}
+
+/* Pause on hover */
+.marqueeWrapper:hover .marqueeTrack {
+    animation-play-state: paused;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .marqueeItem {
+        width: 280px;
+        height: 200px;
+    }
+    
+    .marqueeTrack {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .marqueeItem {
+        width: 200px;
+        height: 150px;
+    }
+    
+    .marqueeTrack {
+        gap: 12px;
+    }
+}

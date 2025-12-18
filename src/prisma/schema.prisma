@@ -1,0 +1,140 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id       String  @id @default(uuid())
+  email    String  @unique
+  name     String
+  password String
+  isAdmin  Boolean @default(false)
+}
+
+model Service {
+  id               String          @id @default(uuid())
+  title            String
+  description      String
+  shortDescription String
+  projects         Project[]       @relation("ServiceProjects")
+  modules          ServiceModule[]
+}
+
+model ServiceModule {
+  id          String  @id @default(uuid())
+  title       String
+  description String
+  service     Service @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  serviceId   String
+}
+
+model Project {
+  id                  String               @id @default(uuid())
+  name                String?
+  client              String?
+  clientImage         String?
+  isFeature           Boolean              @default(false)
+  description         String
+  isUpcoming          Boolean              @default(false)
+  createdAt           DateTime             @default(now())
+  updatedAt           DateTime             @updatedAt
+  images              Image[]
+  services            Service[]            @relation("ServiceProjects")
+  descriptionSections DescriptionSection[]
+}
+
+model DescriptionSection {
+  id          String  @id @default(uuid())
+  title       String
+  description String
+  projectId   String
+  project     Project @relation(fields: [projectId], references: [id])
+}
+
+model Image {
+  id        String  @id @default(uuid())
+  url       String
+  project   Project @relation(fields: [projectId], references: [id])
+  projectId String
+}
+
+model Spotlight {
+  id          String   @id @default(uuid())
+  imgUrl      String
+  type        String
+  title       String
+  link        String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Snippet {
+  id        String   @id @default(uuid())
+  url       String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Office {
+  id        String   @id @default(uuid())
+  city      String
+  jobs      Job[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Team {
+  id        String   @id @default(uuid())
+  title     String
+  jobs      Job[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Job {
+  id          String   @id @default(uuid())
+  title       String
+  teamId      String
+  imgUrl      String
+  description String
+  team        Team     @relation(fields: [teamId], references: [id])
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  office      Office  @relation(fields: [officeId], references: [id])
+  officeId    String
+}
+
+model Message {
+  id          String   @id @default(uuid())
+  subject     String
+  title       String
+  firstName   String
+  lastName    String
+  email       String
+  market      String
+  company     String
+  phoneNumber String
+  message     String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Email {
+  id    String @id @default(uuid())
+  email String @unique
+}
+
+model CloudinaryConfig {
+  id        String @id @default(uuid())
+  cloudName String
+  apiKey    String
+  apiSecret String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
